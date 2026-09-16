@@ -19,3 +19,10 @@ If a model reaches the correct final translation or output but uses faulty inter
 ---
 
 ## 🛠️ Repository Content & Schemas
+
+```text
+├── rubrics/
+│   └── atomic_qa_schema.json       # JSON Schema for deterministic evaluation
+├── benchmarks/
+│   └── cot_divergence_example.md   # Step-by-step logic audit showcase
+└── README.md
