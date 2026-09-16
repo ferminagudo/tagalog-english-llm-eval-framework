@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AtomicQARubric",
+  "description": "Standardized schema for evaluating LLM responses on Tagalog-English translation fidelity and rule adherence.",
+  "type": "object",
+  "properties": {
+    "evaluator_id": {
+      "type": "string",
+      "example": "ferminagudo"
+    },
+    "language_pair": {
+      "type": "string",
+      "default": "tl-PH / en-US"
+    },
+    "atomic_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion_name": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string",
+            "enum": ["PASS", "FAIL"]
+          },
+          "divergence_step": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": ["criterion_name", "result", "rationale"]
+      }
+    }
+  },
+  "required": ["evaluator_id", "language_pair", "atomic_checks"]
+}
